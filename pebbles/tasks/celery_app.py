@@ -60,17 +60,25 @@ def get_config():
     token = get_token()
     pbclient = PBClient(token, local_config['INTERNAL_API_BASE_URL'], ssl_verify=False)
 
-    return dict([(x['key'], x['value']) for x in pbclient.do_get('variables').json()])
+    res = dict([(x['key'], x['value']) for x in pbclient.do_get('variables').json()])
+
+    # patch the results with a few local overrides, if provided
+    for key in ('INTERNAL_API_BASE_URL', 'DEBUG', 'SECRET_KEY', 'M2M_CREDENTIAL_STORE'):
+        res[key]=local_config[key]
+
+    return res
 
 
 # tune requests to give less spam in development environment with self signed certificate
 # TODO: Should we disable this when not in development environment then? -jyrsa 2016-11-28
 requests.packages.urllib3.disable_warnings()
-logging.getLogger("requests").setLevel(logging.WARNING)
+logging.getLogger("requests").setLevel(logging.DEBUG)
 
 logger = get_task_logger(__name__)
 if local_config['DEBUG']:
     logger.setLevel('DEBUG')
+    print('debug enabled')
+    print('api url ' + local_config['INTERNAL_API_BASE_URL'])
 
 celery_app = Celery(
     'tasks',
