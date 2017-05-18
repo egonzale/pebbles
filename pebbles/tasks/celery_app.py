@@ -72,11 +72,12 @@ def get_config():
 # tune requests to give less spam in development environment with self signed certificate
 # TODO: Should we disable this when not in development environment then? -jyrsa 2016-11-28
 requests.packages.urllib3.disable_warnings()
-logging.getLogger("requests").setLevel(logging.DEBUG)
+logging.getLogger("requests").setLevel(logging.WARNING)
 
 logger = get_task_logger(__name__)
 if local_config['DEBUG']:
     logger.setLevel('DEBUG')
+    logging.getLogger("requests").setLevel(logging.DEBUG)
 
 celery_app = Celery(
     'tasks',

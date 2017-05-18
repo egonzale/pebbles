@@ -38,7 +38,7 @@ alembic==0.8.8
 graphviz==0.5.1
 Sphinx==1.5
 semver==2.7.2
-#positional==1.1.1
+positional==1.1.1
 responses==0.5.1
 
 # for s2i
