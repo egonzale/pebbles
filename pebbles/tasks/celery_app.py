@@ -64,7 +64,7 @@ def get_config():
 
     # patch the results with a few local overrides, if provided
     for key in ('INTERNAL_API_BASE_URL', 'DEBUG', 'SECRET_KEY', 'M2M_CREDENTIAL_STORE'):
-        res[key]=local_config[key]
+        res[key] = local_config[key]
 
     return res
 
@@ -77,8 +77,6 @@ logging.getLogger("requests").setLevel(logging.DEBUG)
 logger = get_task_logger(__name__)
 if local_config['DEBUG']:
     logger.setLevel('DEBUG')
-    print('debug enabled')
-    print('api url ' + local_config['INTERNAL_API_BASE_URL'])
 
 celery_app = Celery(
     'tasks',
