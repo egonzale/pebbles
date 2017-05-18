@@ -45,3 +45,5 @@ responses==0.5.1
 psycopg2==2.7.1
 gunicorn==19.7.1
 
+# for setup.cfg support
+setuptools>=30.3
