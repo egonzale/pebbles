@@ -27,7 +27,8 @@ class SessionView(restful.Resource):
             return form.errors, 422
 
         user = User.query.filter_by(email=form.email.data).first()
-        if user and user.check_password(form.password.data):
+        password = form.password.data
+        if user and user.check_password(password.encode('utf8')):
             return marshal({
                 'token': user.generate_auth_token(app.config['SECRET_KEY']),
                 'is_admin': user.is_admin,
