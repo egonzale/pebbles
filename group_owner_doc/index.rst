@@ -49,18 +49,18 @@ Terminology
 
 **persistent blueprints**
     instances tagged with peristent are the opposite of ephemeral:
-    the disk is persisted in one way or another for at least some time. 
+    the disk is persisted in one way or another for at least some time.
 
 Typical End-User Use Case
 =========================
 
-1. User logs in to Pebbles using SSO
-1. User is given a **join code** for a group
-1. User pastes/types the **join code** into Pebbles
-1. User locates a Blueprint (called a resource in the user UI because they
-don't need to know what blueprints are)
-1. User starts a blueprint
-1. User uses the resources provided by the blueprint
+#. User logs in to Pebbles using SSO
+#. User is given a **join code** for a group
+#. User pastes/types the **join code** into Pebbles
+#. User locates a Blueprint (called a resource in the user UI because they
+   don't need to know what blueprints are)
+#. User starts a blueprint
+#. User uses the resources provided by the blueprint
 
 
 Creating Blueprints
@@ -69,13 +69,13 @@ Creating Blueprints
 First a Pebbles **admin** has to create a blueprint template. How to do so
 is not covered here but you can contact your admins to make requests.
 
-1. Go to Blueprints tab
-2. Select the BlueprintTemplate which you wish to use and click Create
+#. Go to Blueprints tab
+#. Select the BlueprintTemplate which you wish to use and click Create
    Blueprint
-3. **select the for which the blueprint will be made available**
-4. Fill in other variables
-5. Click Create
-6. Activate the blueprint by clicking **Activate**
+#. **select the for which the blueprint will be made available**
+#. Fill in other variables
+#. Click Create
+#. Activate the blueprint by clicking **Activate**
 
 The configurable variables depend on what fields the **admins** have made
 available for editing. Environment variables are available to the process
