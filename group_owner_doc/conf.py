@@ -33,8 +33,8 @@ except ImportError:
 # 0.1.1.dev1
 from pbr.version import SemanticVersion
 
-sys.path.insert(0, os.path.abspath('../..'))
-sys.stderr.write("inserted %s to path\n" % os.path.abspath("../.."))
+sys.path.insert(0, os.path.abspath('..'))
+sys.stderr.write("inserted %s to path\n" % os.path.abspath(".."))
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
@@ -81,7 +81,7 @@ author = u'CSC - Center for Scientific Computing Ltd.'
 
 #HackHack: read version from setup.cfg to have it in one place
 cfparser = ConfigParser()
-cfparser.read("../../setup.cfg")
+cfparser.read("../setup.cfg")
 release = cfparser.get("metadata", "version")
 version_info = SemanticVersion(release)
 # a short version
