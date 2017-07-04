@@ -37,7 +37,9 @@ Terminology
     template.
 
 **admins**
-    are people who maintain the Pebbles installation
+    are people who maintain the Pebbles installation. The much more
+    comprehensive `admin documentation < http://cscfi.github.io/pebbles/>`_
+    covers things admins should know about
 
 **drivers**
     are the integrations Pebbles has with different resource providing
@@ -86,21 +88,25 @@ Bootstrapping environments
 ==========================
 
 Most of the time it is desirable to have some pre-downloaded data or code
-files present on the system.
+files present on the system. For a university course you might download the
+templates.
 
-The builds/scripts directory of _Notebooks contains the scripts run at the
-start of containers. The bootstrap/ directory contains examples of how to
-use the files. If you have multiple files and/or repositories then it is
-suggested that you download a shell script and execute it in the background.
-
-.. _Notebooks: https://github.com/CSCfi/notebook-images/
+The builds/scripts directory of
+`notebook-images < https://github.com/CSCfi/notebook-images/>`_ contains
+the scripts run at the start of containers. The bootstrap/ directory
+contains examples of how to use the files. If you have multiple files and/or
+repositories then it is suggested that you download a shell script and
+execute it in the background. The script can be downloaded from anywhere as
+long as it is publicly available on the Internet.
 
 Note:
 
 - if you have a persistent volume then if you blindly download things you
-  may override any changes stored on the disk
+  **may override any changes a user made** on the disk. Write your shell
+  scripts accordingly.
 - the peristent disk is shared by all Blueprints on the same back-end so you
   should have your data inside a subdirectory
 - most resources have a random UID for the user, which confuses git, because
   it can't guess your username and email address
+
   - setting GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL should fix these issues
