@@ -13,26 +13,43 @@ the more comprehensive documentation and relevant artefacts.
 Terminology
 ===========
 
-- **group** is a rights management unit: the regular members of a group have
-  access to the same set of **blueprints**
-- **blueprints** are a set of instructions to provision a resource. A
-  **group owner** or **group admin** can create blueprints and make them
-  visible to their group.
-- **group owner** is an individual who has the rights to create groups. each
-  group must have an owner. In academic projects the group owner is
-  typically the professor or the principal investigator. Group owners can
-  also do everything a **group manager** does.
-- **group manager** is an individual who can create and enable and disable
-  blueprints to regular group members. They are expected to be teaching or
-  research assistans, junior researchers etc.
-- Blueprints are based on **blueprint templates** created by the **admins**.
-- **admins** are people who maintain the Pebbles installation
-- **drivers** are the integrations Pebbles has with different resource
-providing systems, such as OpenStack, OpenShift or our custom DockerDriver
-- **ephemeral** some resources are ephemeral, i.e. all data on disk
-disappears when the resource expires
-- **persistent** instances tagged with peristent are the opposite of ephemeral:
-an NFS volume for the user so they can store things on disk.
+**group**
+    is a rights management unit: the regular members of a group have
+    access to the same set of **blueprints**
+
+**blueprints**
+    are a set of instructions to provision a resource. A **group owner** or
+    **group admin** can create blueprints and make them visible to their group.
+
+**group owner**
+    is an individual who has the rights to create groups. each
+    group must have an owner. In academic projects the group owner is
+    typically the professor or the principal investigator. Group owners can
+    also do everything a **group manager** does.
+
+**group manager**
+    is an individual who can create and enable and disable
+    blueprints to regular group members. They are expected to be teaching or
+    research assistans, junior researchers etc.
+
+**blueprint templates**
+    are created by the **admins**. A blueprint is created using a blueprint
+    template.
+
+**admins**
+    are people who maintain the Pebbles installation
+
+**drivers**
+    are the integrations Pebbles has with different resource providing
+    systems, such as OpenStack, OpenShift or our custom DockerDriver
+
+**ephemeral blueprints**
+    some resources are ephemeral, i.e. all data on disk
+    disappears when the resource expires
+
+**persistent blueprints**
+    instances tagged with peristent are the opposite of ephemeral:
+    the disk is persisted in one way or another for at least some time. 
 
 Typical End-User Use Case
 =========================
@@ -54,7 +71,7 @@ is not covered here but you can contact your admins to make requests.
 
 1. Go to Blueprints tab
 2. Select the BlueprintTemplate which you wish to use and click Create
-Blueprint
+   Blueprint
 3. **select the for which the blueprint will be made available**
 4. Fill in other variables
 5. Click Create
@@ -79,10 +96,11 @@ suggested that you download a shell script and execute it in the background.
 .. _Notebooks: https://github.com/CSCfi/notebook-images/
 
 Note:
+
 - if you have a persistent volume then if you blindly download things you
-may override any changes stored on the disk
+  may override any changes stored on the disk
 - the peristent disk is shared by all Blueprints on the same back-end so you
- should have your data inside a subdirectory
+  should have your data inside a subdirectory
 - most resources have a random UID for the user, which confuses git, because
- it can't guess your username and email address
+  it can't guess your username and email address
   - setting GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL should fix these issues
