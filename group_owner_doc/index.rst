@@ -112,6 +112,16 @@ user
 - both Jupyter Notebooks and RStudio support running an HTML-based shell so
   you can try out your commands before
 
+The suggested workflow is:
+
+#. boot a **clean** blueprint with no startup script
+#. using the editing features in Jupyter notebooks / RStudio server edit a
+   shell script file
+#. **debug** running the shell script in the clean blueprint
+#. when you are satisfied upload the file somewhere and set the system up to
+   download and run it automatically
+
+
 Environment variables
 =====================
 
@@ -142,7 +152,8 @@ AUTODOWNLOAD_EXEC_BG
    AUTODOWNLOAD_URL=https://example.com/~user/scripts/prepare.sh
    AUTODOWNLOAD_EXEC=prepare.sh
 
-Or a more complex example
+Or a more complex example that forces the name of the downloaded artefact
+and runs it in the background.
 
 .. code-block:: shell
    AUTODOWNLOAD_URL=https://example.com/~user/scripts/nonsensical_name.sh
@@ -167,8 +178,6 @@ GIT_COMMITTER_EMAIL
 Using HTTPS urls is preferred over using SSH for GitHub/GitLab. Note that if
 the user has two-factor authentication enabled in GitHub they will need a
 token to use the HTTPS interface.
-
-
 
 Root Privileges
 ---------------
