@@ -24,7 +24,8 @@ Terminology
 **group owner**
     is an individual who has the rights to create groups. each
     group must have an owner. In academic projects the group owner is
-    typically the professor or the principal investigator. Group owners can
+    typically the professor or the principal investigator. A group owner
+    has accountability for the resources that a group uses. Group owners can
     also do everything a **group manager** does.
 
 **group manager**
@@ -92,7 +93,7 @@ files present on the system. For a university course you might download the
 templates.
 
 The builds/scripts directory of
-`notebook-images < https://github.com/CSCfi/notebook-images/>`_ contains
+`notebook-images <https://github.com/CSCfi/notebook-images/>`_ contains
 the scripts run at the start of containers. The bootstrap/ directory
 contains examples of how to use the files. If you have multiple files and/or
 repositories then it is suggested that you download a shell script and
