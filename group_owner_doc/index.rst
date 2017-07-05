@@ -38,7 +38,7 @@ Terminology
 
 **admins**
     are people who maintain the Pebbles installation. The much more
-    comprehensive `admin documentation < http://cscfi.github.io/pebbles/>`_
+    comprehensive `admin documentation <http://cscfi.github.io/pebbles/>`_
     covers things admins should know about
 
 **drivers**
@@ -106,13 +106,62 @@ Note:
   scripts accordingly.
 - the peristent disk is shared by all Blueprints on the same back-end so you
   should have your data inside a subdirectory
-- most resources have a random UID for the user, which confuses git, because
-  it can't guess your username and email address
-
-  - setting GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL should fix most issues
-
+- most blueprints are containers which run as a pseudorandom UID for the
+user
 - both Jupyter Notebooks and RStudio support running an HTML-based shell so
   you can try out your commands before
+
+Environment variables
+=====================
+
+The containers built from `notebook-images
+<https://github.com/CSCfi/notebook-images/>`_ all understand common
+environment variables
+
+AUTODOWNLOAD_URL
+    A URL to be downloaded as a file to the local system, e.g
+    "http://example.org/example.sh"
+AUTODOWNLOAD_URL_FILENAME
+    A target name for the URL, e.g. "data.zip"
+
+The Jupyter notebooks containers additionally have
+
+AUTODOWNLOAD_EXEC
+    The name of a file to execute **before** starting Jupyter notebooks. If the
+    script is essential for starting the notebook(s) then it should be
+    run with AUTODOWNLOAD_EXEC.
+AUTODOWNLOAD_EXEC_BG
+    The name of a file to execute **in the background** just before starting
+    Jupyter notebooks. If your script e.g. loads data over a slow network
+    connection and that data isn't needed for the first 15 minutes,
+    AUOTODOWNLOAD_EXEC_BG is a good alternative.
+
+.. hilight:: shell
+
+    AUTODOWNLOAD_URL=https://example.com/~user/scripts/start_notebook.sh
+    AUTODOWNLOAD_FILENAME=start.sh
+    AUTODOWNLOAD_EXEC=start.sh
+
+Git
+---
+
+Git wants to always know who the user is. Specifically it needs a username
+and an email address. The UID in containers is a pseudorandom number and not
+ available in the local /etc/passwd, which confuses git.
+
+The workaround is to set
+
+GIT_COMMITTER_NAME
+    A human-readable name.
+
+GIT_COMMITTER_EMAIL
+    Something that looks like a valid email address.
+
+Using HTTPS urls is preferred over using SSH for GitHub/GitLab. Note that if
+the user has two-factor authentication enabled in GitHub they will need a
+token to use the HTTPS interface.
+
+
 
 Root Privileges
 ---------------
