@@ -139,9 +139,15 @@ AUTODOWNLOAD_EXEC_BG
 
 .. code-block:: shell
 
-   AUTODOWNLOAD_URL=https://example.com/~user/scripts/start_notebook.sh
-   AUTODOWNLOAD_FILENAME=start.sh
-   AUTODOWNLOAD_EXEC=start.sh
+   AUTODOWNLOAD_URL=https://example.com/~user/scripts/prepare.sh
+   AUTODOWNLOAD_EXEC=prepare.sh
+
+Or a more complex example
+
+.. code-block:: shell
+   AUTODOWNLOAD_URL=https://example.com/~user/scripts/nonsensical_name.sh
+   AUTODOWNLOAD_FILENAME=bootstrap_slow.sh
+   AUTODOWNLOAD_EXEC_BG=bootstrap_slow.sh
 
 Git
 ---
