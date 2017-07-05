@@ -156,6 +156,7 @@ Or a more complex example that forces the name of the downloaded artefact
 and runs it in the background.
 
 .. code-block:: shell
+
    AUTODOWNLOAD_URL=https://example.com/~user/scripts/nonsensical_name.sh
    AUTODOWNLOAD_FILENAME=bootstrap_slow.sh
    AUTODOWNLOAD_EXEC_BG=bootstrap_slow.sh
