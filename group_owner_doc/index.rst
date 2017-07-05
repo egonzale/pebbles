@@ -137,7 +137,7 @@ AUTODOWNLOAD_EXEC_BG
     connection and that data isn't needed for the first 15 minutes,
     AUOTODOWNLOAD_EXEC_BG is a good alternative.
 
-.. highlight:: shell
+.. code-block:: shell
    :linenothreshold: 5
 
    AUTODOWNLOAD_URL=https://example.com/~user/scripts/start_notebook.sh
