@@ -112,7 +112,7 @@ Note:
   - setting GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL should fix most issues
 
 - both Jupyter Notebooks and RStudio support running an HTML-based shell so
-you can try out your commands before
+  you can try out your commands before
 
 Root Privileges
 ---------------
