@@ -138,7 +138,6 @@ AUTODOWNLOAD_EXEC_BG
     AUOTODOWNLOAD_EXEC_BG is a good alternative.
 
 .. code-block:: shell
-   :linenothreshold: 5
 
    AUTODOWNLOAD_URL=https://example.com/~user/scripts/start_notebook.sh
    AUTODOWNLOAD_FILENAME=start.sh
