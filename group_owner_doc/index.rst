@@ -138,10 +138,11 @@ AUTODOWNLOAD_EXEC_BG
     AUOTODOWNLOAD_EXEC_BG is a good alternative.
 
 .. hilight:: shell
+   :linenothreshold: 5
 
-    AUTODOWNLOAD_URL=https://example.com/~user/scripts/start_notebook.sh
-    AUTODOWNLOAD_FILENAME=start.sh
-    AUTODOWNLOAD_EXEC=start.sh
+   AUTODOWNLOAD_URL=https://example.com/~user/scripts/start_notebook.sh
+   AUTODOWNLOAD_FILENAME=start.sh
+   AUTODOWNLOAD_EXEC=start.sh
 
 Git
 ---
