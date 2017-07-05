@@ -109,4 +109,17 @@ Note:
 - most resources have a random UID for the user, which confuses git, because
   it can't guess your username and email address
 
-  - setting GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL should fix these issues
+  - setting GIT_COMMITTER_NAME and GIT_COMMITTER_EMAIL should fix most issues
+
+- both Jupyter Notebooks and RStudio support running an HTML-based shell so
+you can try out your commands before
+
+Root Privileges
+---------------
+
+Most blueprints won't run the bootup script with root privileges for
+security reasons. In some rare cases this cannot be avoided. In those cases
+the user should be able to use `sudo` to become root.
+
+**It is recommended to do all configurations and installation as the user
+whenever possible.**
