@@ -94,14 +94,16 @@ So, when a user launches your blueprint, they will be able to see the files from
 the necessary libraries directly.
 In order to continue with this, you need to enter the following value in the field called 
 'environment variables for docker, separated by space' :
-``AUTODOWNLOAD_URL=<URL_TO_A_BASH_SCRIPT> AUTODOWNLOAD_EXEC=instance_launch.sh``
+``AUTODOWNLOAD_URL=<URL_TO_A_BASH_SCRIPT_FILE> AUTODOWNLOAD_EXEC=<FILENAME_WITH_FILE_EXTENSION>``
 
 As you can notice, it requires ``<URL_TO_A_BASH_SCRIPT>``. This bash script is responsible for cloning your github repo,
-installing your libraries etc. 
+installing your libraries etc. *NOTE: You can also use a shell script (.sh) if you prefer.*
+
 An example of the bash script can be found at : https://github.com/CSCfi/notebook-images/blob/master/bootstrap/spark-sql.bash
 The above script tries to clone a github repo and then tries to install a python library via pip. The github repo it clones
 contains the required files and datasets. You can make your own script in a similar way and host it somewhere on the web.
-Replace ``<URL_TO_A_BASH_SCRIPT>`` with the actual URL of your script.
+Replace ``<URL_TO_A_BASH_SCRIPT>`` with the actual URL of your script and ``<FILENAME_WITH_FILE_EXTENSION>`` with
+the filename of the script.
 
 .. image:: img/blueprints_view.png
 
