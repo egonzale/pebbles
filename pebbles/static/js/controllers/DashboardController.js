@@ -228,6 +228,10 @@ app.controller('DashboardController', ['$q', '$scope', '$routeParams', '$interva
                         instance: function(){
                            return instance;
                         },
+
+                        blueprint: function(){
+                           return _.filter($scope.blueprints, { 'id': instance.blueprint_id });
+                        },
                     }   
                 }).result.then(function(markedInstances) {
                        window.open(instance.instance_data['endpoints'][0].access, '_blank');
@@ -305,8 +309,11 @@ app.controller('DashboardController', ['$q', '$scope', '$routeParams', '$interva
         $scope.startPolling();
     }]);
 
-app.controller('ModalShowPasswordController', function($scope, $modalInstance, instance) {
+app.controller('ModalShowPasswordController', function($scope, $modalInstance, instance, blueprint) {
     $scope.instance = instance
+    if(blueprint[0].template_name == 'Rstudio') {
+        $scope.rstudioUsername = true;
+    }
     $scope.copyAndClose = function() {
         try {
             var passwordField = document.querySelector('#password');
