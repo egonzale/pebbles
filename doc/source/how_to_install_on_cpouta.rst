@@ -151,10 +151,13 @@ See  :py:class:`pebbles.config.BaseConfig`  for all the options.
 Pebbles server can be deployed through ansible playbook. The repository containing depoyment code and instructions are in csc/pebbles-deploy. 
 
 When deployment is run successfully, admin credentials can be initialized using https://<ip-address-of-pebblesserver>/#initialize
+something
+-----------
 
+testing here
 
 Enable a driver
-+++++++++++++++
+---------------
 
 Blueprint templates can be created based on the drivers. At present there are OpenStack,Docker and Openshift drivers. They are given using the variable PLUGIN_WHITELIST. By default, only a dummy test driver is enabled when pebbles software is installed through bash script. 
 To add more drivers for provisioning different resources, you need to edit the _PLUGIN_WHITELIST_
